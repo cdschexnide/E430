@@ -49,5 +49,3 @@ npm run preview
 - TypeScript
 - Vite
 - Tailwind CSS
-- FormSpree (contact form)
-
