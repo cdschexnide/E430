@@ -1,4 +1,5 @@
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useEffect } from 'react';
+import { initEmailJS, sendEmail } from '../utils/emailjs';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,6 +20,10 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  useEffect(() => {
+    initEmailJS();
+  }, []);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
@@ -32,32 +37,21 @@ const Contact = () => {
     setFormStatus({ type: 'idle', message: '' });
 
     try {
-      // Using FormSpree - replace 'YOUR_FORM_ID' with actual FormSpree form ID
-      // To get a form ID, sign up at https://formspree.io/ and create a form
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
+      await sendEmail(formData);
 
-      if (response.ok) {
-        setFormStatus({
-          type: 'success',
-          message: 'Thank you for your message! We will get back to you soon.'
-        });
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          service: '',
-          message: ''
-        });
-      } else {
-        throw new Error('Form submission failed');
-      }
+      setFormStatus({
+        type: 'success',
+        message: 'Thank you for your message! We will get back to you soon.'
+      });
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        message: ''
+      });
     } catch (error) {
+      console.error('Error sending email:', error);
       setFormStatus({
         type: 'error',
         message: 'Sorry, there was an error submitting your form. Please email us directly at marc@e430tech.com'
