@@ -1,21 +1,21 @@
-import { useState, FormEvent, useEffect } from 'react';
-import { initEmailJS, sendEmail } from '../utils/emailjs';
+import { useState, FormEvent, useEffect } from "react";
+import { initEmailJS, sendEmail } from "../utils/emailjs";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
   });
 
   const [formStatus, setFormStatus] = useState<{
-    type: 'idle' | 'success' | 'error';
+    type: "idle" | "success" | "error";
     message: string;
   }>({
-    type: 'idle',
-    message: ''
+    type: "idle",
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -24,37 +24,42 @@ const Contact = () => {
     initEmailJS();
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setFormStatus({ type: 'idle', message: '' });
+    setFormStatus({ type: "idle", message: "" });
 
     try {
       await sendEmail(formData);
 
       setFormStatus({
-        type: 'success',
-        message: 'Thank you for your message! We will get back to you soon.'
+        type: "success",
+        message: "Thank you for your message! We will get back to you soon.",
       });
       setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: ''
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        message: "",
       });
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error("Error sending email:", error);
       setFormStatus({
-        type: 'error',
-        message: 'Sorry, there was an error submitting your form. Please email us directly at marc@e430tech.com'
+        type: "error",
+        message:
+          "Sorry, there was an error submitting your form. Please email us directly at marc@e430tech.com",
       });
     } finally {
       setIsSubmitting(false);
@@ -84,8 +89,18 @@ const Contact = () => {
                 {/* Email */}
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
                     </svg>
                   </div>
                   <div>
@@ -102,8 +117,18 @@ const Contact = () => {
                 {/* Phone */}
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      />
                     </svg>
                   </div>
                   <div>
@@ -120,22 +145,49 @@ const Contact = () => {
                 {/* Location */}
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
                     </svg>
                   </div>
                   <div>
                     <p className="text-sm text-primary-100">Location</p>
-                    <p className="text-lg font-semibold">Colorado Springs, CO</p>
+                    <p className="text-lg font-semibold">
+                      Colorado Springs, CO
+                    </p>
                   </div>
                 </div>
 
                 {/* Business Hours */}
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
                     </svg>
                   </div>
                   <div>
@@ -162,7 +214,10 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name */}
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
+                >
                   Name *
                 </label>
                 <input
@@ -179,7 +234,10 @@ const Contact = () => {
 
               {/* Email */}
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
+                >
                   Email *
                 </label>
                 <input
@@ -196,7 +254,10 @@ const Contact = () => {
 
               {/* Phone */}
               <div>
-                <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
+                >
                   Phone
                 </label>
                 <input
@@ -212,7 +273,10 @@ const Contact = () => {
 
               {/* Service Interest */}
               <div>
-                <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label
+                  htmlFor="service"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
+                >
                   Service Interest
                 </label>
                 <select
@@ -223,7 +287,7 @@ const Contact = () => {
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none"
                 >
                   <option value="">Select a service</option>
-                  <option value="rf-radio">RF Radio Services</option>
+                  <option value="rf-radio">RF Services</option>
                   <option value="it-services">IT Services</option>
                   <option value="networking">Computer Networking</option>
                   <option value="other">Other</option>
@@ -232,7 +296,10 @@ const Contact = () => {
 
               {/* Message */}
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
+                >
                   Message *
                 </label>
                 <textarea
@@ -253,17 +320,17 @@ const Contact = () => {
                 disabled={isSubmitting}
                 className="w-full bg-primary-600 text-white font-semibold py-4 px-6 rounded-lg hover:bg-primary-700 transition-all duration-300 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
 
               {/* Status Messages */}
-              {formStatus.type === 'success' && (
+              {formStatus.type === "success" && (
                 <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
                   <p className="text-green-800">{formStatus.message}</p>
                 </div>
               )}
 
-              {formStatus.type === 'error' && (
+              {formStatus.type === "error" && (
                 <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
                   <p className="text-red-800">{formStatus.message}</p>
                 </div>

@@ -4,7 +4,7 @@ A website for E430 Technologies LLC built with React, TypeScript, and Tailwind C
 
 ## Services Highlighted
 
-- RF Radio Services (consulting, installation, and repairs)
+- RF Services (consulting, installation, and repairs)
 - IT Services (system administration, support, security)
 - Computer Networking (design, setup, and maintenance)
 
@@ -18,11 +18,13 @@ A website for E430 Technologies LLC built with React, TypeScript, and Tailwind C
 ### Installation
 
 1. Install dependencies:
+
 ```bash
 npm install
 ```
 
 2. Start the development server:
+
 ```bash
 npm run dev
 ```

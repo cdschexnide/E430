@@ -1,6 +1,6 @@
 const Hero = () => {
   const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -17,7 +17,7 @@ const Hero = () => {
         {/* Logo */}
         <div className="mb-12 flex justify-center animate-fade-in">
           <img
-            src="/assets/companyLogo_8.png"
+            src="/assets/companyLogo_9.png"
             alt="E430 Technologies"
             className="w-full max-w-md md:max-w-lg h-auto rounded-2xl shadow-2xl"
           />
@@ -29,7 +29,8 @@ const Hero = () => {
         </h1>
 
         <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto animate-slide-up delay-200">
-          Expert consulting and repair services for RF systems, information technology, and computer networks
+          Expert consulting and repair services for RF systems, information
+          technology, and computer networks
         </p>
 
         {/* CTA Button */}
