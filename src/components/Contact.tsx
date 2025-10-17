@@ -59,7 +59,7 @@ const Contact = () => {
       setFormStatus({
         type: "error",
         message:
-          "Sorry, there was an error submitting your form. Please email us directly at marc@e430tech.com",
+          "Sorry, there was an error submitting your form. Please email us directly at Info@e430Tech.com",
       });
     } finally {
       setIsSubmitting(false);
@@ -106,10 +106,10 @@ const Contact = () => {
                   <div>
                     <p className="text-sm text-primary-100">Email</p>
                     <a
-                      href="mailto:marc@e430tech.com"
+                      href="mailto:Info@e430Tech.com"
                       className="text-lg font-semibold hover:text-primary-100 transition-colors"
                     >
-                      marc@e430tech.com
+                      Info@e430Tech.com
                     </a>
                   </div>
                 </div>

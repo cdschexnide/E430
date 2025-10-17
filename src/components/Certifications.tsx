@@ -33,16 +33,8 @@ const Certifications = () => {
             strokeWidth="2.5"
             strokeLinecap="round"
           />
-          <circle
-            cx="40"
-            cy="50"
-            r="4"
-            fill="currentColor"
-          />
-          <path
-            d="M36 44L44 44L44 48L36 48L36 44Z"
-            fill="currentColor"
-          />
+          <circle cx="40" cy="50" r="4" fill="currentColor" />
+          <path d="M36 44L44 44L44 48L36 48L36 44Z" fill="currentColor" />
         </svg>
       ),
       description:
@@ -53,7 +45,7 @@ const Certifications = () => {
         "Qualified for advanced RF system troubleshooting and optimization",
         "Licensed for commercial two-way radio service and repair",
       ],
-      background: "bg-gradient-to-br from-primary-50 to-blue-50"
+      background: "bg-gradient-to-br from-primary-50 to-blue-50",
     },
     {
       title: "FAA Part 107",
@@ -88,10 +80,38 @@ const Certifications = () => {
             rx="1.5"
             fill="currentColor"
           />
-          <line x1="33" y1="38" x2="30" y2="36" stroke="currentColor" strokeWidth="2" />
-          <line x1="47" y1="38" x2="50" y2="36" stroke="currentColor" strokeWidth="2" />
-          <line x1="33" y1="46" x2="30" y2="48" stroke="currentColor" strokeWidth="2" />
-          <line x1="47" y1="46" x2="50" y2="48" stroke="currentColor" strokeWidth="2" />
+          <line
+            x1="33"
+            y1="38"
+            x2="30"
+            y2="36"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          <line
+            x1="47"
+            y1="38"
+            x2="50"
+            y2="36"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          <line
+            x1="33"
+            y1="46"
+            x2="30"
+            y2="48"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          <line
+            x1="47"
+            y1="46"
+            x2="50"
+            y2="48"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
           {/* Camera indicator */}
           <circle cx="40" cy="42" r="1.5" fill="white" />
         </svg>
@@ -104,7 +124,7 @@ const Certifications = () => {
         "Tower and rooftop infrastructure assessment from the air",
         "Network facility mapping and campus layout documentation",
       ],
-      background: "bg-gradient-to-br from-primary-50 to-purple-50"
+      background: "bg-gradient-to-br from-primary-50 to-purple-50",
     },
   ];
 
@@ -117,7 +137,8 @@ const Certifications = () => {
             Licensed & Certified
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            E430 Technologies maintains professional certifications ensuring compliance, expertise, and industry-leading service quality
+            E430 Technologies maintains professional certifications ensuring
+            compliance, expertise, and industry-leading service quality
           </p>
         </div>
 
@@ -143,9 +164,7 @@ const Certifications = () => {
                   <p className="text-lg font-semibold text-primary-700 mb-1">
                     {cert.fullName}
                   </p>
-                  <p className="text-sm text-gray-600 italic">
-                    {cert.agency}
-                  </p>
+                  <p className="text-sm text-gray-600 italic">{cert.agency}</p>
                 </div>
 
                 {/* Description */}
@@ -185,17 +204,20 @@ const Certifications = () => {
         {/* Bottom CTA */}
         <div className="mt-12 text-center">
           <p className="text-gray-600">
-            Our certifications demonstrate our commitment to professional excellence and regulatory compliance.{' '}
+            Our certifications demonstrate our commitment to professional
+            excellence and regulatory compliance.{" "}
             <a
               href="#contact"
-              onClick={(e) => {
+              onClick={e => {
                 e.preventDefault();
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" });
               }}
               className="text-primary-600 hover:text-primary-700 font-semibold transition-colors"
             >
               Contact us
-            </a>{' '}
+            </a>{" "}
             to learn how our certified expertise can benefit your project.
           </p>
         </div>

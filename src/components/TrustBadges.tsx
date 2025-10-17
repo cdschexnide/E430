@@ -27,17 +27,16 @@ const TrustBadges = () => {
                   strokeWidth="2.5"
                   strokeLinecap="round"
                 />
-                <circle
-                  cx="32"
-                  cy="38"
-                  r="3"
-                  fill="currentColor"
-                />
+                <circle cx="32" cy="38" r="3" fill="currentColor" />
               </svg>
             </div>
             <div>
-              <div className="text-sm font-semibold text-gray-900">FCC Licensed</div>
-              <div className="text-xs text-gray-600">General Radiotelephone Operator</div>
+              <div className="text-sm font-semibold text-gray-900">
+                FCC Licensed
+              </div>
+              <div className="text-xs text-gray-600">
+                General Radiotelephone Operator
+              </div>
             </div>
           </div>
 
@@ -75,15 +74,47 @@ const TrustBadges = () => {
                   rx="1"
                   fill="currentColor"
                 />
-                <line x1="26" y1="30" x2="24" y2="28" stroke="currentColor" strokeWidth="1.5" />
-                <line x1="38" y1="30" x2="40" y2="28" stroke="currentColor" strokeWidth="1.5" />
-                <line x1="26" y1="36" x2="24" y2="38" stroke="currentColor" strokeWidth="1.5" />
-                <line x1="38" y1="36" x2="40" y2="38" stroke="currentColor" strokeWidth="1.5" />
+                <line
+                  x1="26"
+                  y1="30"
+                  x2="24"
+                  y2="28"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                />
+                <line
+                  x1="38"
+                  y1="30"
+                  x2="40"
+                  y2="28"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                />
+                <line
+                  x1="26"
+                  y1="36"
+                  x2="24"
+                  y2="38"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                />
+                <line
+                  x1="38"
+                  y1="36"
+                  x2="40"
+                  y2="38"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                />
               </svg>
             </div>
             <div>
-              <div className="text-sm font-semibold text-gray-900">FAA Certified</div>
-              <div className="text-xs text-gray-600">Part 107 Commercial UAS Operator</div>
+              <div className="text-sm font-semibold text-gray-900">
+                FAA Certified
+              </div>
+              <div className="text-xs text-gray-600">
+                Part 107 Commercial UAS Operator
+              </div>
             </div>
           </div>
         </div>
